@@ -1,8 +1,8 @@
-package com.example.otpmobil.model;
+package com.example.otpmobil.dto;
 
 import com.opencsv.bean.CsvBindByPosition;
 
-public class Customer {
+public class CustomerDTO {
     @CsvBindByPosition(position = 0)
     private String webshopId;
     @CsvBindByPosition(position = 1)
@@ -12,14 +12,14 @@ public class Customer {
     @CsvBindByPosition(position = 3)
     private String address;
 
-    public Customer(String webshopId, String customerId, String name, String address) {
+    public CustomerDTO(String webshopId, String customerId, String name, String address) {
         this.webshopId = webshopId;
         this.customerId = customerId;
         this.name = name;
         this.address = address;
     }
 
-    public Customer() {
+    public CustomerDTO() {
     }
 
     public String getWebshopId() {
@@ -54,13 +54,13 @@ public class Customer {
         this.address = address;
     }
 
-        @Override
-        public String toString() {
-            return "Customer{" +
-                    "webshopId='" + webshopId + '\'' +
-                    ", customerId='" + customerId + '\'' +
-                    ", name='" + name + '\'' +
-                    ", address='" + address + '\'' +
-                    '}';
-        }
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "webshopId='" + webshopId + '\'' +
+                ", customerId='" + customerId + '\'' +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                '}';
+    }
 }
