@@ -21,7 +21,9 @@ public class Payment {
 
     private String cardNo;
 
-    public Payment(String webshopId, String customerId, String webshopCustomerId, String paymentMode, Long amount, String bankAccountNo, String cardNo) {
+    private String date;
+
+    public Payment(String webshopId, String customerId, String webshopCustomerId, String paymentMode, Long amount, String bankAccountNo, String cardNo, String date) {
         this.webshopId = webshopId;
         this.customerId = customerId;
         this.webshopCustomerId = webshopCustomerId;
@@ -29,6 +31,7 @@ public class Payment {
         this.amount = amount;
         this.bankAccountNo = bankAccountNo;
         this.cardNo = cardNo;
+        this.date = date;
     }
 
     public Payment() {
@@ -97,5 +100,13 @@ public class Payment {
 
     public void setCardNo(String cardNo) {
         this.cardNo = cardNo;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
