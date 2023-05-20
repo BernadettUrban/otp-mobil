@@ -9,8 +9,10 @@ import org.mapstruct.factory.Mappers;
 @Mapper
 public interface PaymentMapper {
     PaymentMapper INSTANCE = Mappers.getMapper(PaymentMapper.class);
-    @Mapping( target = "webshopCustomerId", expression = "java(paymentDTO.getWebshopId() + \" \" + paymentDTO.getCustomerId())")
+
+    @Mapping(target = "webshopCustomerId", expression = "java(paymentDTO.getWebshopId() + \" \" + paymentDTO.getCustomerId())")
     Payment paymentDtoToPayment(PaymentDTO paymentDTO);
+
     PaymentDTO paymentToPaymentDTO(Payment payment);
 
 }

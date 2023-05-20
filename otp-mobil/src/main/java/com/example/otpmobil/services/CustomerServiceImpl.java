@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CustomerServiceImpl implements CustomerService{
+public class CustomerServiceImpl implements CustomerService {
     private final CustomerRepository customerRepository;
 
 
@@ -28,16 +28,18 @@ public class CustomerServiceImpl implements CustomerService{
                 .build()
                 .parse();
     }
-    public List<Customer> convertCustomerDTOtoCustomer(List<CustomerDTO> customerDTOs){
+
+    public List<Customer> convertCustomerDTOtoCustomer(List<CustomerDTO> customerDTOs) {
         List<Customer> customers = new ArrayList<>();
-        for (CustomerDTO dto:customerDTOs) {
+        for (CustomerDTO dto : customerDTOs) {
             Customer customer = CustomerMapper.INSTANCE.customerDtoToCustmer(dto);
             customers.add(customer);
         }
         return customers;
     }
-    public void saveCustomerToDB(List<Customer> customers){
-        for (Customer customer:customers) {
+
+    public void saveCustomerToDB(List<Customer> customers) {
+        for (Customer customer : customers) {
             this.customerRepository.save(customer);
         }
     }

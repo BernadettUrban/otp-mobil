@@ -3,9 +3,8 @@ package com.example.otpmobil.models;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
+@Table(name = "customer")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

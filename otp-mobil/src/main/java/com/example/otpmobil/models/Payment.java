@@ -4,6 +4,7 @@ package com.example.otpmobil.models;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "payment")
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

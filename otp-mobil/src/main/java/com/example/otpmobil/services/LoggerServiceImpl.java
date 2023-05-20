@@ -1,10 +1,11 @@
 package com.example.otpmobil.services;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LoggerServiceImpl implements LoggerService{
+public class LoggerServiceImpl implements LoggerService {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoggerServiceImpl.class);
 
     @Override

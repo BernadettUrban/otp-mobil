@@ -10,8 +10,10 @@ import org.mapstruct.factory.Mappers;
 public interface CustomerMapper {
 
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
-    @Mapping( target = "webshopCustomerId", expression = "java(customerDTO.getWebshopId() + \" \" + customerDTO.getCustomerId())")
+
+    @Mapping(target = "webshopCustomerId", expression = "java(customerDTO.getWebshopId() + \" \" + customerDTO.getCustomerId())")
     Customer customerDtoToCustmer(CustomerDTO customerDTO);
+
     CustomerDTO customerToCustomerDTO(Customer customer);
 
 }
