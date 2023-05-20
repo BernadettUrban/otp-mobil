@@ -56,7 +56,7 @@ public class CustomerDTO {
 
     @Override
     public String toString() {
-        return "Customer{" +
+        return "CustomerDTO{" +
                 "webshopId='" + webshopId + '\'' +
                 ", customerId='" + customerId + '\'' +
                 ", name='" + name + '\'' +

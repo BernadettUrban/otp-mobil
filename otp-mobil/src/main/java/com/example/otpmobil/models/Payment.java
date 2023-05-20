@@ -9,12 +9,10 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long id;
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    private Webshop webshop;
+    private String webshopId;
+    private String customerId;
 
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    private Customer customer;
-
+    private String webshopCustomerId;
     private String paymentMode;
 
     private Long amount;
@@ -23,13 +21,18 @@ public class Payment {
 
     private String cardNo;
 
-    public Payment(Webshop webshop, Customer customer, String paymentMode, Long amount, String bankAccountNo, String cardNo) {
-        this.webshop = webshop;
-        this.customer = customer;
+    public Payment(String webshopId, String customerId, String webshopCustomerId, String paymentMode, Long amount, String bankAccountNo, String cardNo) {
+        this.webshopId = webshopId;
+        this.customerId = customerId;
+        this.webshopCustomerId = webshopCustomerId;
         this.paymentMode = paymentMode;
         this.amount = amount;
         this.bankAccountNo = bankAccountNo;
         this.cardNo = cardNo;
+    }
+
+    public Payment() {
+
     }
 
     public Long getId() {
@@ -40,20 +43,28 @@ public class Payment {
         this.id = id;
     }
 
-    public Webshop getWebshop() {
-        return webshop;
+    public String getWebshopId() {
+        return webshopId;
     }
 
-    public void setWebshop(Webshop webshop) {
-        this.webshop = webshop;
+    public void setWebshopId(String webshopId) {
+        this.webshopId = webshopId;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
+    }
+
+    public String getWebshopCustomerId() {
+        return webshopCustomerId;
+    }
+
+    public void setWebshopCustomerId(String webshopCustomerId) {
+        this.webshopCustomerId = webshopCustomerId;
     }
 
     public String getPaymentMode() {

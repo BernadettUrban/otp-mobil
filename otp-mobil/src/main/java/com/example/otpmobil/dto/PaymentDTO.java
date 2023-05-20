@@ -81,7 +81,7 @@ public class PaymentDTO {
 
     @Override
     public String toString() {
-        return "Payment{" +
+        return "PaymentDTO{" +
                 "webshopId='" + webshopId + '\'' +
                 ", customerId='" + customerId + '\'' +
                 ", paymentMode=" + paymentMode +

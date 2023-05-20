@@ -12,18 +12,16 @@ public class Customer {
     @Column(name = "id", nullable = false)
     private Long id;
     private String customerId;
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    private Webshop webshop;
-    @OneToMany(cascade = CascadeType.REFRESH)
-    private List<Payment> paymentsByCustomer;
+    private String webshopId;
+    private String webshopCustomerId;
     private String name;
 
     private String address;
 
-    public Customer(String customerId, Webshop webshop, List<Payment> paymentsByCustomer, String name, String address) {
+    public Customer(String customerId, String webshopId, String webshopCustomerId, String name, String address) {
         this.customerId = customerId;
-        this.webshop = webshop;
-        this.paymentsByCustomer = paymentsByCustomer;
+        this.webshopId = webshopId;
+        this.webshopCustomerId = webshopCustomerId;
         this.name = name;
         this.address = address;
     }
@@ -47,20 +45,20 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public Webshop getWebshop() {
-        return webshop;
+    public String getWebshopId() {
+        return webshopId;
     }
 
-    public void setWebshop(Webshop webshop) {
-        this.webshop = webshop;
+    public void setWebshopId(String webshopId) {
+        this.webshopId = webshopId;
     }
 
-    public List<Payment> getPaymentsByCustomer() {
-        return paymentsByCustomer;
+    public String getWebshopCustomerId() {
+        return webshopCustomerId;
     }
 
-    public void setPaymentsByCustomer(List<Payment> paymentsByCustomer) {
-        this.paymentsByCustomer = paymentsByCustomer;
+    public void setWebshopCustomerId(String webshopCustomerId) {
+        this.webshopCustomerId = webshopCustomerId;
     }
 
     public String getName() {
